@@ -9,6 +9,7 @@ function Header() {
     const { user, setUser } = useContext(UserContext);
     const [image, setImage] =useState()
 
+    console.log(image)
     useEffect(() => {
         const token = localStorage.getItem("token")
         if(token){
@@ -16,7 +17,7 @@ function Header() {
             // console.log(decode.id)
             const userId = decode.id
             axios.get(`http://localhost:8080/user/${userId}`)
-            .then(res => {setImage(res.data.message.name)})
+            .then(res => {setImage(res.data.message.image)})
             .catch(err => console.log(err.data.message))
         }
     })
@@ -34,8 +35,9 @@ function Header() {
    {user === true ? ( 
     <div className="flex gap-5 items-center">
     <div className="mx-auto">
-        {/* <img src={mailcamp} alt="" srcset="" className="w-12 rounded-full" /> */}
-        <p className="font-light text-xl mt-3">{image}</p>
+        {/* <img src={mailcamp} alt="" srcset="" */}
+        <img src={`http://localhost:8080/${image}`} className="w-12 rounded-full"  alt="" />
+        {/* <img className="font-light text-xl mt-3">{``}</img> */}
     </div>
     <Link to="/" onClick={handleLogout}  className="px-10 py-2 bg-black text-white rounded-md">
         Logout

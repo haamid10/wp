@@ -3,15 +3,14 @@ const posts = require("../Models/postModel");
 exports.createPost = async (req, res) => {
  try {
   await posts.create(req.body);
-// console.log(req.body);
-  res.status(200).json({ message: "post is created successfully", data: req.body });
+  res.status(200).json({ message: "post is created successfully" });
  } catch (error) {
   res.status(200).json({ error });
  }
 };
 exports.allPost = async (req, res) => {
     try {
-        const findPost = await posts.find({});
+        const findPost = await posts.find({}).populate("user");
         res.status(200).json({ message: findPost });
         
     } catch (error) {
@@ -23,7 +22,7 @@ exports.allPost = async (req, res) => {
 exports.getOnePost = async (req, res) => {
      try {
         const { id } = req.params;
-        const findPost = await posts.findById(id).populate("user");
+        const findPost = await posts.findById({_id: id}).populate("user");
         res.status(200).json({ message: findPost });
      } catch (error) {
         return  res.status(400).json(error.message) 

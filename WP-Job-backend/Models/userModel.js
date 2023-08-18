@@ -24,7 +24,7 @@ const userSchema = mongoose.Schema({
  image: {
    type: String,
    required: true,
- }
+ },
 });
 
 const userModel = mongoose.model("User", userSchema);
