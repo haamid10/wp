@@ -36,7 +36,7 @@ function Header() {
     <div className="flex gap-5 items-center">
     <div className="mx-auto">
         {/* <img src={mailcamp} alt="" srcset="" */}
-        <img src={`http://localhost:8080/${image}`} className="w-12 rounded-full"  alt="" />
+        <img src={`http://localhost:8080/${image}`} className="w-12 rounded-full"            alt="" />
         {/* <img className="font-light text-xl mt-3">{``}</img> */}
     </div>
     <Link to="/" onClick={handleLogout}  className="px-10 py-2 bg-black text-white rounded-md">

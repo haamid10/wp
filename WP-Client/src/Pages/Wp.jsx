@@ -9,7 +9,8 @@ import JobCard from './JobCard'
 
 const Wp = () => {
     const [posts, setPosts] = useState([])
-    // console.log(post)
+    const [forks, setForks] = useState([])
+    // console.log(posts)
     useEffect(()=>{
         axios.get("http://localhost:8080/post/") 
         .then((res)=> { 
@@ -25,11 +26,24 @@ const Wp = () => {
         <p className=' text-center light text-white text-sm '><Link to="/">Home</Link>/Job</p>
       </div>
       <div>
-        <select className='m-4 bg-[#222325] text-white p-2 rounded-md' placeholder='jobType' name="jobType" id="">
+        <select onChange={(e)=>{ 
+          const b = forks?.find((x) => x.id === e.target.value)
+          console.log(b);
+          ;}}
+         className='m-4 bg-[#222325] text-white p-2 rounded-md' placeholder='jobType' name="jobType" id="">
         <option value="" disabled  selected>jobType</option>
+      {forks? posts.map((post)=> {
+        return(
+            <>
+           <option key={post._id} value={post._id}>{post.Location}</option>
+           {/* <option key={post._id} value={post.location}>{post.Location}</option> */}
+            {/* <option key={post._id} value={post.location}>Remote</option> */}
+            </>
+        )
+    }): "null"}
+     
 
-            <option value="">Onsite</option>
-            <option value="">Remote</option>
+            
         </select>
 
         <select className='m-4 bg-[#222325] text-white p-2 rounded-md' placeholder='jobType' name="jobType" id="">
