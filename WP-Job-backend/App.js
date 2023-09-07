@@ -9,6 +9,8 @@ dotenv.config({ path: "./.env" });
 
 require("./Models/postModel")
 require("./Models/userModel")
+require("./Models/blogModel")
+require("./Models/commentModel")
 require("./Connection");
 
 app.use(cors());
