@@ -34,7 +34,7 @@ function Job() {
     <form className="bg-white rounded-lg shadow-lg w-[35rem] mx-auto p-10">
      <h1 className="font-bold text-2xl mb-2">Post New Job</h1>
      <p className="font-light text-xs">
-      The following is required and will be shared with opeepi
+      The following is required and will be shared with open api
      </p>
 
      {/* Name */}
