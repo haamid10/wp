@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import wp from "../assets/Logo.png"
 const JobCard = ({post}) => {
   return (
-    <>
+    <div className='flex ml-[20rem]'>
       <Link to={`/single/${post._id}`}> 
      
       {/* <div className='  bg-gray-300 flex flex-col-reverse'>
@@ -21,9 +21,9 @@ const JobCard = ({post}) => {
     
       </div> */}
 
-<div className="w-[800px] bg-white shadow-md mb-5 px-4 py-2 rounded-md">
-   <div className="flex flex-row items-center justify-between">
-    <div className="flex gap-5 items-center mb-2">
+<div className="w-[800px] bg-gray-100 shadow-lg mb-5 px-4 py-2 rounded-md">
+   <div className="">
+    <div className="flex gap-6 items-center mb-2">
      <div className="rounded-full">
       <img src={`http://localhost:8080/${post.user.image}`} alt="logo" srcset="" className="w-12 rounded-full" />
      </div>
@@ -37,7 +37,7 @@ const JobCard = ({post}) => {
      
 
 </Link>
-    </>
+    </div>
     
   )
 }
