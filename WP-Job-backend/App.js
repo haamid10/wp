@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
-// const user = require("./Models/userModel");
 const userRoute = require("./Routes/userRoute");
 const postRoute = require("./Routes/postRoute");
+const blogRoute = require("./Routes/blogRoute")
 const cors =require("cors")
 dotenv.config({ path: "./.env" });
 
@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(express.static("images"))
 app.use("/user", userRoute);
 app.use("/post", postRoute);
+app.use("/blog", blogRoute)
 
 app.listen(8080, () => {
  console.log("connected server port of 8000");
