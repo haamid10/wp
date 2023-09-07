@@ -2,14 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 const Blog = () => {
   return (
-    <div>
-        <Link to="home"> </Link>
+    <div className=''>
+        <Link to="/"> back </Link>
         blog
-      <div>
-        <h1>Add a Blog</h1>
+      <div className=' w-[700px]  items-start bg-gray-100 p-12'>
+        <h1 className=' text-2xl font-bold text-center p-2 '>Add a Blog</h1>
+       <div className=' flex flex-col gap-4 pt-12'>
         <div>
-            <h3>Blog Form</h3>
-            <span>The following is required and will only be shared with Opeepl</span>
+            <h3 className='text-xl font-bold'>Blog Form</h3>
+            <span className='text-[#7A7B7C]'>The following is required and will only be shared with Opeepl</span>
         </div>
         <div>
             <p>Blog title</p>
@@ -31,7 +32,7 @@ const Blog = () => {
                 <option >Politics</option>
             </select>
         </div>
-        <div>
+       
           <div class="flex items-center justify-center w-[30rem]">
             <label
               for="dropzone-file"
