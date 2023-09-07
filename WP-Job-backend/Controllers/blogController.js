@@ -41,22 +41,22 @@ exports.deleteBlog = async (req, res) => {
 }
 
 // update blog
-exports.updateBlog =async (req,res)=>{
-    try{
-        // console.log('hello')
-        const {id}= req.params;
-        // console.log(id);
-        // console.log(req.body,"this is body");
-        // console.log(typeof(req.body))
-        // console.log((Object.keys(req.body)))
-        const updateblog=await log.findOneAndUpdate({_id :id})
-        // console.log(updatedblog)
-        res.status(200).json({message:updated, data: updateblog})
-    }
-    catch(error){
-        res.status(400).json(error)
-    }
-}
+// exports.updateBlog =async (req,res)=>{
+//     try{
+//         // console.log('hello')
+//         const {id}= req.params;
+//         // console.log(id);
+//         // console.log(req.body,"this is body");
+//         // console.log(typeof(req.body))
+//         // console.log((Object.keys(req.body)))
+//         const updateblog=await log.findOneAndUpdate({_id :id})
+//         // console.log(updatedblog)
+//         res.status(200).json({message:updated, data: updateblog})
+//     }
+//     catch(error){
+//         res.status(400).json(error)
+//     }
+// }
     
 
 
