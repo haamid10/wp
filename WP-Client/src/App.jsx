@@ -12,6 +12,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { UserContext } from "./context/userContect";
 import Job from "./Pages/Job";
+import Blog from "./Pages/Blog";
 import Wp from "./Pages/Wp";
 function App() {
   const [user , setUser] = useState(false)
@@ -34,8 +35,10 @@ function App() {
      <BrowserRouter>
    <Header  user={user}/>
    <Routes>
+    
     <Route path="/" element={<Home />} />
     <Route path="/login" element={<Login />} />
+    <Route path="/createBlog" element={ user === true ?  <Blog/> : <Navigate to="/login"/> } />
     <Route path="/register" element={<Signup />} />
     <Route path="/single/:id" element={<SinglePost />} />
     <Route path="/jobs" element={<Wp />} />
