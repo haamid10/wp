@@ -12,4 +12,3 @@ export default {
  },
  plugins: [],
 };
-// add sept/8/2023
